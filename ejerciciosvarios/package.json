@@ -1,0 +1,12 @@
+{
+  "name": "ejerciciosvarios",
+  "version": "1.0.0",
+  "description": "Html con varios ejercicios de js",
+  "main": "apartado1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "author": "",
+  "license": "ISC"
+}
