@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Usando Xel!</title>
+    <!--Para usar el tema vainilla debemos incluir los siguientes link-->
+    <meta name="xel-theme" content="node_modules/xel/themes/adwaita-dark.css">
+    <meta name="xel-accent-color" content="blue">
+    <meta name="xel-size" content="medium">
+    <meta name="xel-iconset" content="node_modules/xel/iconsets/material.svg">
+
+    <!--Necesitamos incluir este fichero js para xel-->
+    <script src="node_modules/xel/xel.js" type="module"></script>
+
+</head>
+
+<body>
+<x-box>
+    <x-button id="iniciar">
+        <x-label>Iniciar</x-label>
+    </x-button>
+    <x-input id="entrada" maxlength="5" style="margin-left: 10px;">
+        <x-icon href = "#refresh"></x-icon>
+        <x-label>Orden</x-label>
+    </x-input>
+    <x-button id="orden" style="margin-left: 10px;">
+        <x-label>Orden</x-label>
+    </x-button>
+</x-box>
+
+<x-box>
+    <x-texteditor id="area" disabled>
+    </x-texteditor>
+</x-box>
+
+<script src="functions.js"></script>
+</body>
+
+</html>
+<!--
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="UTF-8">
+ <title>Hello Grid</title>
+ <link rel="stylesheet" href="./estilos.css">
+</head>
+
+<body>
+ <div class="wrapper">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+ </div>
+</body>
+
+</html>
+-->
