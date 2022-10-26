@@ -1,12 +1,12 @@
 //EL habitual que usamos:
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow} = require('electron')
 
-function createWindow () {
-    let mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
-        webPreferences: {
-            nodeIntegration: true,
+function createWindow() {
+    let mainWindow = new BrowserWindow({
+        width: 800,
+        height: 600,
+        webPreferences: {
+            nodeIntegration: true,
             contextIsolation: false
         }
     })
@@ -14,8 +14,8 @@ function createWindow () {
     mainWindow.setMenu(null);
     mainWindow.loadFile('index.html')
     // Open the DevTools.
-    // mainWindow.webContents.openDevTools()
+    mainWindow.webContents.openDevTools()
 }
 
 app.whenReady().then(createWindow);
-app.allowRendererProcessReuse = true;
+app.allowRendererProcessReuse = true;
