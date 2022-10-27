@@ -17,20 +17,19 @@ bConvertir.addEventListener('click', () => {
     vCelsius = document.getElementById("celsius").value;
     vKelvin = document.getElementById("kelvin").value;
     try {
-        ///TODO: Problema al introducir Kelvin, siempre deja luego Kelvin a 273.
         if (vCelsius === "" && vKelvin === "" || (isNaN(vKelvin) === true || isNaN(vCelsius) === true)) {
             throw error;
-        }
+            }
         if ((isNaN(vKelvin) === false) && vKelvin !== "" && vCelsius === "") {
             document.getElementById("celsius").value = vKelvin - 273;
-        } else
+        } else {
             vCelsius = Number(vCelsius);
-        document.getElementById("kelvin").value = Number(vCelsius + 273);
-
+            document.getElementById("kelvin").value = Number(vCelsius + 273);
+}
 
     } catch (error) {
         //alert no funciona en electron, ya que congela todos los hilos al ejecutarse,
-        //así que he buscado e instalado el módulo sweetaler2 que me ha funcionado como la seda
+        //así que he buscado e instalado el módulo sweetalert2 que me ha funcionado como la seda
         Toast.fire({
             icon: 'error',
             title: 'Error con los campos',
