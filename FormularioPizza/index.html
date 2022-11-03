@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pedidos Pizza</title>
+    <link rel="stylesheet" href="css/photon.min.css">
+</head>
+<body>
+<div class="window">
+    <header class="toolbar toolbar-header">
+        <h1 class="title">Haga su pedido</h1>
+    </header>
+    <div class="window-content">
+        <div class="pane-group">
+            <div class="pane">
+                <div class="form-group">
+                    <label><img class="img-circle media-object pull-left" src="images/1.png" width="32"
+                                height="32"></label>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label><span class="icon icon-user"></span></label>
+                        <input type="text" class="form-control" placeholder="nombre cliente">
+                    </div>
+                    <div class="form-group">
+                        <label><span class="icon icon-phone"></span></label>
+                        <input type="text" class="form-control" placeholder="teléfono cliente">
+                    </div>
+                    <div class="form-group">
+                        <label><span class="icon icon-address"></span></label>
+                        <input type="text" class="form-control" placeholder="dirección cliente">
+                    </div>
+                </form>
+            </div>
+            <div class="pane">
+                <div class="form-group">
+                    <label><img class="img-circle media-object pull-left" src="images/2.png" width="32"
+                                height="32"></label>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="radios" checked>
+                                Pequeña
+                            </label>
+                            <img class="img-circle media-object pull-right" src="images/pizza1.png" width="22"
+                                 height="22"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="radios">
+                                Mediana
+                            </label>
+                            <img class="img-circle media-object pull-right" src="images/pizza1.png" width="32"
+                                 height="32"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="radios">
+                                Grande
+                            </label>
+                            <img class="img-circle media-object pull-right" src="images/pizza1.png" width="42"
+                                 height="42"></label>
+                        </div>
+                    </li>
+                </ul>
+                <div class="form-group">
+                    <label><img class="img-circle media-object pull-left" src="images/3.png" width="32"
+                                height="32"></label>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="radios">
+                                Delgada
+                            </label>
+                            <img class="img-circle media-object pull-right" src="images/pizza2.png" width="38"
+                                 height="32"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="radios">
+                                Gruesa
+                            </label>
+                            <img class="img-circle media-object pull-right" src="images/pizza2.png" width="36"
+                                 height="36"></label>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="pane" id="ingredientes">
+
+            </div>
+        </div>
+    </div>
+    <footer class="toolbar toolbar-footer">
+        <h1 class="title">Futuros botonos</h1>
+    </footer>
+</div>
+<script src="./functions.js"></script>
+</body>
+</html>
