@@ -1,5 +1,6 @@
 const fs = require('fs');
 const pdf = require('html-pdf')
+let aceptar = document.getElementById("aceptar");
 
 let fichero = fs.readFileSync('./ingredientes.json');
 let ingredientes = JSON.parse(fichero).ingredientes;
@@ -15,13 +16,14 @@ for (let i = 0; i < ingredientes.length; i++) {
 </label>
 </div>`);
 }
-let aceptar = document.getElementById("aceptar");
+
 
 document.getElementById('ingredientes').innerHTML = htmlIngredientes;
-aceptar.addEventListener("click", () => {
+aceptar.addEventListener('click', () => {
     let nombre = document.getElementById("nombre").value;
     let telefono = document.getElementById("telefono").value;
     let direccion = document.getElementById("direccion").value;
+
 
     let tamanio;
     if (document.getElementById("peque").checked) {
@@ -40,20 +42,21 @@ aceptar.addEventListener("click", () => {
     if (document.getElementById("gruesa").checked) {
         masa = "Gruesa";
     }
-    let marcados = {};
+    let marcados= [];
     for (let i = 0; i < ingredientes.length; i++) {
-        if (document.getElementById('ingrediente${i}').checked) {
+        let cad = "ingrediente" + i;
+        if (document.getElementById(cad).checked) {
             marcados.push(ingredientes[i]);
         }
     }
 
-    let content = '<h1>Pedido</h1>' +
-        '<h1>Nombre: ${nombre}</h1>' +
-        '<h1>Teléfono: ${telefono}</h1>' +
-        '<h1>Dirección: ${direccion}</h1>' +
-        '<h1>Tamaño: ${tamanio}</h1>' +
-        '<h1>Masa: ${masa}</h1>' +
-        '<h1> Lista de ingredientes: </h1>';
+    let content = `<h1>Pedido</h1>
+        <h1>Nombre: ${nombre}</h1>
+        <h1>Teléfono: ${telefono}</h1>
+        <h1>Dirección: ${direccion}</h1>
+        <h1>Tamaño: ${tamanio}</h1>
+        <h1>Masa: ${masa}</h1>
+        <h1> Lista de ingredientes: </h1>`;
 
     for (let i = 0; i < marcados.length; i++) {
         content += `<h1>${marcados[i]}`;
