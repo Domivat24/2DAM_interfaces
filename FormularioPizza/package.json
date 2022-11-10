@@ -1,0 +1,17 @@
+{
+  "name": "formulariopizza",
+  "version": "1.0.0",
+  "description": "Formulario de pizza",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "Ivan Jimenez",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^21.2.0",
+    "html-pdf": "^3.0.1",
+    "photon": "^4.0.0"
+  }
+}
