@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro coches</title>
+    <link rel="stylesheet" href="css/photon.min.css">
+</head>
+<body>
+<div class="window">
+    <header class="toolbar toolbar-header">
+        <h1 class="title" id="muestra">Coches</h1>
+    </header>
+    <!--Contenido principal-->
+    <div class="window-content">
+        <div class="list-group-item" id="desplegable">
+            <h3>Brand</h3>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <h3>Model</h3>
+                    <label>
+                        <input type="text" id="model" placeholder="Modelo">
+                    </label>
+            </li>
+            <li class="list-group-item">
+                <h3>Plate</h3>
+                <label>
+                    <input type="text" id="plate" placeholder="Matrícula">
+                </label>
+            </li>
+            <li class="list-group-item" >
+                <h3>Fuel</h3>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="fuel" value="Electric">
+                        Electric
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="fuel" id="petrol" value="Petrol" checked>
+                        Petrol
+                    </label>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <h3>Color</h3>
+                <label>
+                    <input type="text" id="color" placeholder="Color">
+                </label>
+            </li>
+            <li class="list-group-item" id="motor">
+                <h3>Motor</h3>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="motor" id="33" value="3,3 Cv" checked>
+                        3,3 Cv
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="motor" value="5,7 Cv" id="57">
+                        5,7 Cv
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="motor" value="6,3 Cv" id="63">
+                        6,3 Cv
+                    </label>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+    <footer class="toolbar toolbar-footer">
+        <div class="toolbar-actions">
+            <button class="btn btn-primary pull-right" id="registrar">
+                Registrar
+            </button>
+        </div>
+    </footer>
+</div>
+<script>
+    require('./functions.js')
+</script>
+</body>
+</html>

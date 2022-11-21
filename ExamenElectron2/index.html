@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Average Qualification</title>
+    <link rel="stylesheet" href="css/photon.min.css">
+</head>
+<body>
+<div class="window">
+    <header class="toolbar toolbar-header">
+        <h1 class="title" id="muestra">Student qualification</h1>
+    </header>
+    <!--Contenido principal-->
+    <div class="window-content">
+        <form>
+            <div class ="form-group">
+                <label>First task</label>
+                <input type="number" class="form-control" placeholder="First task" id="task1">
+            </div>
+            <div class ="form-group">
+                <label>Second task</label>
+                <input type="number" class="form-control" placeholder="Second task" id="task2">
+            </div>
+            <div class ="form-group">
+                <label>Exam</label>
+                <input type="number" class="form-control" placeholder="First task" id="exam">
+            </div>
+        </form>
+        <div class="pane" id = "resultado">
+        </div>
+    </div>
+    <footer class="toolbar toolbar-footer">
+        <div class="toolbar-actions">
+            <button class="btn btn-primary pull-right" id="calculate">
+                Calculate
+            </button>
+        </div>
+    </footer>
+</div>
+<script>
+    require('./functions.js')
+</script>
+</body>
+</html>
