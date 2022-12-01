@@ -5,8 +5,8 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 500,
-    height: 450,
+    width: 750,
+    height: 650,
     webPreferences: {
       nodeIntegration: true,
 	  contextIsolation: false,
@@ -18,7 +18,7 @@ function createWindow () {
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  //mainWindow.webContents.openDevTools()
 
   mainWindow.setMenu(null)
 

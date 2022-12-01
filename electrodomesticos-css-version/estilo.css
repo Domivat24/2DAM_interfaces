@@ -1,0 +1,18 @@
+body {
+    margin-left: 10pt;
+    padding: 0;
+    background-color:#0092ca;
+    color: #393e46;
+    font-size: 14pt;
+    font-family: 'Patrick Hand', cursive;
+    /*no funciona*/
+    font-stretch: ultra-expanded;
+
+
+}
+.electrodomesticos {
+    margin: 12pt;
+    border:12px solid #222831;
+    padding: 12pt;
+    border-radius: 15px;
+}

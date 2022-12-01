@@ -7,7 +7,7 @@ productos = JSON.parse(fichero);
 console.log(productos);
 
 //contruir select
-let cadenaDOM = '<select id="electros">';
+let cadenaDOM = '<select id="electros" class="table-striped">';
 productos.forEach(producto => {
 	cadenaDOM += `<option value="${producto.nombre}">${producto.nombre}</option>`;
 });

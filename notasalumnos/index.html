@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notas Alumnos</title>
+    <link rel="stylesheet" href="css/photon.min.css">
+    <style>
+        input {
+            border: 0 none;
+            box-shadow: none;
+            background-color:inherit;
+        }
+    </style>
+</head>
+<body>
+<div class="window">
+    <header class="toolbar toolbar-header">
+        <h1 class="title">Alumnos</h1>
+        <div class="toolbar-actions">
+            <div class="btn-group">
+                <button class="btn btn-default" id="open">
+                    <span class="icon icon-folder"></span>
+                </button>
+                <div class="btn-group">
+                    <button class="btn btn-default" id="save">
+                        <span class="icon icon-floppy"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <table class="table-striped">
+        <thead>
+        <tr>
+            <th>Grupo</th>
+            <th>Nombre</th>
+            <th>Nota</th>
+        </tr>
+        </thead>
+        <tbody id="ctabla">
+        </tbody>
+    </table>
+</div>
+<script src="./f2.js"></script>
+</body>
+</html>
