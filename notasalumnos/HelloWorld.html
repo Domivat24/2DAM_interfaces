@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HelloWorld</title>
+</head>
+<body>
+<h1>HOLA</h1>
+<button id="mondongo">Abrir ventana</button>
+<script>
+    const {app} = require('electron')
+    const BrowserWindow = require("@electron/remote").BrowserWindow
+    mondongo = document.getElementById("mondongo");
+    mondongo.addEventListener('click', () => {
+        let ggdeals = new BrowserWindow({
+            width: 1000,
+            height: 600,
+            parent: mainWindow,
+            title: 'Hola MUNDO'
+
+        });
+        ggdeals.loadURL("https://gg.deals/")
+
+
+
+    })
+</script>
+</body>
+</html>
