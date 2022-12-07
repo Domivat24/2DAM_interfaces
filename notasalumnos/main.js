@@ -9,6 +9,7 @@ const BrowserWindow = electron.BrowserWindow;
 require('@electron/remote/main').initialize()
 
 let mainWindow
+let win = new BrowserWindow;
 
 function createWindow() {
     mainWindow = new BrowserWindow({
@@ -25,7 +26,7 @@ function createWindow() {
     require("@electron/remote/main").enable(mainWindow.webContents)
 
     mainWindow.loadFile('index.html')
-    let childWindow = new BrowserWindow({
+    var childWindow = new BrowserWindow({
         width: 400,
         height: 300,
         parent: mainWindow,
@@ -73,7 +74,7 @@ app.on('ready', function () {
             {
                 label: "Maximizar",
                 click: function () {
-                    mainWindow.maximize();
+                    BrowserWindow.getFocusedWindow().maximize();
                 }
             },
             {type: 'separator'},
@@ -109,7 +110,6 @@ app.on('ready', function () {
     const menu = Menu.buildFromTemplate(template);
     Menu.setApplicationMenu(menu);
 })
-/* Menu contextual no va
 app.on('ready', function (event, win) {
     const ctxMenu = new Menu()
     ctxMenu.append(new MenuItem(
@@ -121,7 +121,7 @@ app.on('ready', function (event, win) {
         }
     ))
 
-    win.webContents.on('context-menu', function (e, params) {
+    childWindow.webContents.on('context-menu', function (e, params) {
         ctxMenu.popup(win, params.x, params.y)
     })
-})*/
+})

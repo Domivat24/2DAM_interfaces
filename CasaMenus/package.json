@@ -1,0 +1,17 @@
+{
+  "name": "casamenus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@electron/remote": "^2.0.8",
+    "electron": "^21.3.1",
+    "photon": "^4.0.0"
+  }
+}

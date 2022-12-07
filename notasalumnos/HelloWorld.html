@@ -5,24 +5,13 @@
     <title>HelloWorld</title>
 </head>
 <body>
-<h1>HOLA</h1>
-<button id="mondongo">Abrir ventana</button>
+<h1 id="prueba">HOLA</h1>
+<button id="abrir">Abrir ventana</button>
 <script>
-    const {app} = require('electron')
-    const BrowserWindow = require("@electron/remote").BrowserWindow
-    mondongo = document.getElementById("mondongo");
-    mondongo.addEventListener('click', () => {
-        let ggdeals = new BrowserWindow({
-            width: 1000,
-            height: 600,
-            parent: mainWindow,
-            title: 'Hola MUNDO'
-
-        });
-        ggdeals.loadURL("https://gg.deals/")
-
-
-
+    let abrir = document.getElementById("abrir");
+    abrir.addEventListener('click', () => {
+        document.getElementById("prueba").innerHTML = "ADIOS";
+        window.open("https://drive.google.com/drive/u/0/my-drive")
     })
 </script>
 </body>
