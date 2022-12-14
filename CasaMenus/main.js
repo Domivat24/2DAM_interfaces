@@ -8,6 +8,10 @@ require('@electron/remote/main').initialize()
 
 let propiedades = [false, false, false, false, false, false];
 let propString = ["Habitación 1", "Habitación 2", "Salón", "Cocina", "Baño", "Garaje", "Trastero"];
+let setBoolean = (i) => {
+    propiedades[i] = !propiedades[i];
+    console.log(propiedades[i] + propString[i])
+}
 
 
 function createWindow() {
@@ -44,30 +48,23 @@ app.on('ready', function () {
                         {
                             label: 'Habitación 1',
                             click: function () {
-                                setBoolean(1);
-                                //Me aseguro de que no puedan elegirse los 2
-                                // tipos de habitacion a la vez
-                                propiedades[2] = false
+                                setBoolean(0);
                             },
                             type: "checkbox"
                         },
                         {
                             label: 'Habitación 2',
                             click: function () {
-                                setBoolean(2);
-                                //Me aseguro de que no puedan elegirse los 2
-                                // tipos de habitacion a la vez
-                                propiedades[1] = false
+                                setBoolean(1);
                             },
                             type: 'checkbox'
                         }
-
                     ]
                 },
                 {
                     label: 'Salón',
                     click: function () {
-                        setBoolean(1)
+                        setBoolean(2)
                     },
                     type: "checkbox",
                     accelerator: 'CmdOrCtrl + S'
@@ -75,13 +72,18 @@ app.on('ready', function () {
                 {type: "separator"},
                 {
                     label: 'Cocina',
-                    click: setBoolean(2),
+                    click: function () {
+                        setBoolean(3)
+
+                    },
                     type: 'checkbox',
                     accelerator: 'CmdOrCtrl + C'
                 },
                 {
                     label: 'Baño',
-                    click: setBoolean(3),
+                    click: function () {
+                        setBoolean(4)
+                    },
                     type: 'checkbox',
                     accelerator: 'CmdOrCtrl + B'
                 },
@@ -92,13 +94,17 @@ app.on('ready', function () {
             submenu: [
                 {
                     label: 'Garaje',
-                    click: setBoolean(4),
+                    click: function () {
+                        setBoolean(5)
+                    },
                     type: 'checkbox',
                     accelerator: 'Alt + G'
                 },
                 {
                     label: "Trastero",
-                    click: setBoolean(5),
+                    click: function () {
+                        setBoolean(6)
+                    },
                     type: 'checkbox',
                     accelerator: 'Alt + T'
                 }]
@@ -108,7 +114,7 @@ app.on('ready', function () {
                 click: function () {
                     let cadena = "";
                     for (let i = 0; i < propString.length; i++) {
-                        if (propiedades[i]=== true) {
+                        if (propiedades[i] === true) {
                             console.log(propiedades[i])
                             console.log(cadena)
                             cadena += propString[i] + " ha sido seleccionado\n"
@@ -125,7 +131,4 @@ app.on('ready', function () {
         Menu.setApplicationMenu(menu);
     }
 )
-let setBoolean = (i) => {
-    propiedades[i] = !propiedades[i];
-    console.log(propiedades[i])
-}
+
