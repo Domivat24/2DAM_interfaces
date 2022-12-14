@@ -9,7 +9,6 @@ const BrowserWindow = electron.BrowserWindow;
 require('@electron/remote/main').initialize()
 
 let mainWindow
-let win = new BrowserWindow;
 
 function createWindow() {
     mainWindow = new BrowserWindow({
@@ -26,7 +25,7 @@ function createWindow() {
     require("@electron/remote/main").enable(mainWindow.webContents)
 
     mainWindow.loadFile('index.html')
-    var childWindow = new BrowserWindow({
+    let childWindow = new BrowserWindow({
         width: 400,
         height: 300,
         parent: mainWindow,
@@ -110,6 +109,7 @@ app.on('ready', function () {
     const menu = Menu.buildFromTemplate(template);
     Menu.setApplicationMenu(menu);
 })
+/*
 app.on('ready', function (event, win) {
     const ctxMenu = new Menu()
     ctxMenu.append(new MenuItem(
@@ -124,4 +124,4 @@ app.on('ready', function (event, win) {
     childWindow.webContents.on('context-menu', function (e, params) {
         ctxMenu.popup(win, params.x, params.y)
     })
-})
+})*/
