@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <button onclick="press()">Boton</button>
+    <p id="contenido"></p>
+</div>
+<script>
+    let contenido = document.getElementById("contenido")
+    function press() {
+        fetch("https://randomuser.me/api").then(data => data.json()).then(data => contenido.innerHTML = `${data.results[0].name.first}`)
+    }
+</script>
+</body>
+</html>

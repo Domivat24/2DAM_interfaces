@@ -19,5 +19,5 @@ let nuevo = {
 fetch(recursos + "/clientes", {
     method: "post",
     body: JSON.stringify(nuevo),
-    headers: { 'Content-Type': 'application/json' },
+    headers: {'Content-Type': 'application/json'},
 }).then(res => res.json()).then(json => console.log(json))
