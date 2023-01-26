@@ -27,11 +27,20 @@ let contactSchema = new mongoose.Schema({
 });
 let Contact = mongoose.model("contactos", contactSchema)
 let contact1 = new Contact({
-    name: "Boris",
-    telephone: "123123123",
+    name: "Boris3",
+    telephone: "133323123",
     age: 49
 })
+//insertamos contacto
 let p1 = contact1.save().then(resultado => {
     console.log("Contact addded: ", resultado)
 }).catch()
+//busqueda
+let p2 = Contact.find({nombre: 'Boris'}).then(res => console.log(res)).catch(err => console.log("ERROR:" + err))
+let p3 = Contact.find({nombre: 'Boris'}).then(res => console.log(res)).catch(err => console.log("ERROR:" + err))
 
+//debemos esperar que acaben todas las promesas 
+//para cerrar la conexión a la base de datos
+Promise.all([p1, p2, p3]).then(values => {
+    mongoose.connection.close();
+});
