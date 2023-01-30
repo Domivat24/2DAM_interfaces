@@ -55,3 +55,71 @@ let inicio = json => {
     document.getElementById("wrapper").innerHTML = cadena
 }
 buscarTodos()
+//Boton Buscar Autor
+document.getElementById("btnBuscarAutor").addEventListener("click", () => {
+    let autor = document.getElementById("txtBuscarAutor").value
+    if (autor === "") {
+        let notificacion = document.querySelector("#notificacion")
+        notificacion.innerHTML = "Debe escribir algo"
+        notificacion.opened = true;
+    } else {
+        Libro.find({author: {$regex: autor, $options: 'i'}}).then(res => inicio(res)).catch(err => console.log(err))
+    }
+})
+//Boton buscar Titulo
+document.getElementById("btnBuscarTitulo").addEventListener("click", () => {
+    let titulo = document.getElementById("txtBuscarTitulo").value
+    if (titulo === "") {
+        let notificacion = document.querySelector("#notificacion")
+        notificacion.innerHTML = "Debe escribir algo"
+        notificacion.opened = true;
+    } else {
+        Libro.find({author: {$regex: titulo, $options: 'i'}}).then(res => inicio(res)).catch(err => console.log(err))
+    }
+})
+
+document.getElementById("btnAniadirLibro").addEventListener("click", (ev) => {
+
+    let titulo = document.getElementById("txtNuevoTitulo").value
+    let autor = document.getElementById("txtNuevoAutor").value
+    let imagen = document.getElementById("txtNuevaImagen").value
+
+    if (imagen === "" || autor === "" || titulo === "") {
+        let notificacion = document.querySelector('#notificacion2')
+        notificacion.innerHTML = "Debe escribir algo"
+        notificacion.opened = true
+    } else {
+        let libro = new Libro({
+            title: titulo,
+            author: autor,
+            img: imagen
+        })
+        libro.save().then(res => {
+            let notificacion = document.querySelector('#notificacion2')
+            notificacion.innerHTML = "Libro añadido correctamente"
+            notificacion.opened = true
+            buscarTodos()
+        }).catch(() => {
+            let notificacion = document.querySelector('#notificacion2')
+            notificacion.innerHTML = "No se ha podido añadir el libro"
+            notificacion.opened = true
+        })
+    }
+})
+document.getElementById("btnBorrarLibro").addEventListener("click", () => {
+    let titulo = document.getElementById("tituloABorrar").value
+    if (titulo === "") {
+        let notificacion = document.querySelector('#notificacion3')
+        notificacion.innerHTML = "Debe escribir algo"
+        notificacion.opened = true
+    } else {
+        Libro.deleteOne({title: titulo}).then(() => buscarTodos()).catch(err => console.log(err))
+        let notificacion = document.querySelector('#notificacion3')
+        notificacion.innerHTML = "Libro eliminado correctamente"
+        notificacion.opened = true
+    }
+
+})
+//Boton mostrar todos
+document.getElementById("btnMostrarTodos").addEventListener("click", () => Libro.find().then(res => inicio(res)).catch(err => console.log(err)))
+

@@ -11,8 +11,8 @@
     padding: 1em;
     color: #0e0d0d;
 }
+
 .wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-
 }

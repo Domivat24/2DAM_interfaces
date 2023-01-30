@@ -44,3 +44,4 @@ libros.forEach(libro => {
         console.log("Book added: ", resultado)
     }).catch(err => console.log("ERROR: " + err))
 })
+Promise.all([]).then(() => mongoose.connection.close())
