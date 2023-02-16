@@ -1,4 +1,4 @@
-const {Game} = require('./controllers/crearjuegos.js');
+const { Game } = require('./crearjuegos.js');
 const express = require("express");
 const bodyParser = require("body-parser");
 const fs = require("fs")
@@ -25,16 +25,16 @@ app.get("/juegos", (req, res) => {
 app.post("/juegos/nuevo", (req, res) => {
     let nuevoJuego = req.body;
     new Game(nuevoJuego).save().then(res => console.log("Game added: ", res)).catch(err => console.log(err))
-    res.send({ok: true})
+    res.send({ ok: true })
 })
 app.post("/juegos/eliminar", (req, res) => {
     let nuevoJuego = req.body;
-    Game.deleteOne({title: {$regex: nuevoJuego.title}}).then(res => console.log("Game deleted: ", res)).catch(err => console.log(err))
-    res.send({ok: true})
+    new Game.deleteOne([{ title: nuevoJuego }]).then(res => console.log("Game deleted: ", res)).catch(err => console.log(err))
+    res.send({ ok: true })
 })
 app.post("/juegos/actualizar", (req, res) => {
     let nuevoJuego = req.body;
-    Game.updateOne({title: nuevoJuego.title}).then(res => console.log("Game updated: ", res)).catch(err => console.log(err))
-    res.send({ok: true})
+    new Game.updateOne([{ title: nuevoJuego }]).then(res => console.log("Game updated: ", res)).catch(err => console.log(err))
+    res.send({ ok: true })
 })
 app.listen(8080)

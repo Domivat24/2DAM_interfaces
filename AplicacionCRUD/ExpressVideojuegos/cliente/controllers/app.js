@@ -5,8 +5,6 @@ const fetch = require('node-fetch');
 const recurso = "http://127.0.0.1:8080";
 
 let button = document.getElementById("nuevo")
-let modificar = false;
-let busqueda = {};
 
 //Get para todos los juegos:
 fetch(recurso + '/juegos')
@@ -46,49 +44,6 @@ button.addEventListener("click", () => {
                 .then(res => res.json())
                 .then(json => inicio(json));
         });
-})
-document.getElementById("quitar").addEventListener("click", () => {
-    let nuevo = {
-        "title": document.getElementById("titulo").value,
-        "developer": document.getElementById("developer").value,
-        "img": "placeholder.png"
-    }
-    fetch(recurso + '/juegos/eliminar', {
-            method: "post",
-            body: JSON.stringify(nuevo),
-            headers: {'Content-Type': 'application/json'},
-        }
-    )
-        .then(res => res.json())
-        .then(() => {
-            fetch(recurso + '/juegos')
-                .then(res => res.json())
-                .then(json => inicio(json));
-        });
-})
-document.getElementById("actualizar").addEventListener("click", () => {
-    let nuevo = {
-        "title": document.getElementById("titulo").value
-    }
-    if (!modificar) {
-        busqueda = nuevo
-        modificar = true
-        document.getElementById("actualizar")
-    } else {
-        fetch(recurso + '/juegos/actualizar', {
-                method: "post",
-                body: JSON.stringify(busqueda),
-                headers: {'Content-Type': 'application/json'},
-            }
-        )
-            .then(res => res.json())
-            .then(() => {
-                fetch(recurso + '/juegos')
-                    .then(res => res.json())
-                    .then(json => inicio(json));
-            });
-        modificar = false
-    }
 })
 let startListener = (juego) => {
     document.getElementById('foto' + juego.img.substring(0, juego.img.indexOf("."))).addEventListener('click', () => setGame(juego))
