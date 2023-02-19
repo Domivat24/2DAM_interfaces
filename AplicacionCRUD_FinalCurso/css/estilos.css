@@ -1,0 +1,7 @@
+.pane > div {
+    border: 2px solid #6abcff;
+    border-radius: 5px;
+    background-color: #eaf6ff;
+    padding: 1em;
+    color: #0e0d0d;
+}
